@@ -320,6 +320,7 @@ export default function FitscapeHero() {
                 />
               </div>
               <p className="text-gray-600 text-center mt-auto">Activewear designed for performance and comfort.</p>
+              <p className="text-gray-600 text-center mt-auto">Activewear u wannna try?.</p>
             </div>
           </div>
         </div>
