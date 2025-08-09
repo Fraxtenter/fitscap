@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ClothingStore from "./productlisting1";
 import FitscapeFooter from "./footer";
+import { Link } from "react-router-dom";
 
 // Helper function for color compatibility
 function colorCompatibility(color1, color2) {
@@ -239,7 +240,9 @@ export default function FitscapeHero() {
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Pear Shape</h3>
               <p className="text-gray-600 mb-4 text-center">Wider hips and thighs, smaller bust and shoulders.</p>
+              <Link to="/products">
               <button className="bg-purple-500 hover:bg-purple-600 text-white px-6 py-2 rounded-full font-semibold transition-colors mt-auto">Show Outfits</button>
+              </Link>
             </div>
             {/* Apple Shape */}
             <div className="flex flex-col items-center bg-pink-100 p-8 rounded-3xl shadow-xl hover:bg-pink-200 transition-colors">
@@ -277,7 +280,7 @@ export default function FitscapeHero() {
           </div>
         </div>
       </section>
-    <ClothingStore/>
+    {/* <ClothingStore/> */}
      
     
       {/* Categories Section */}

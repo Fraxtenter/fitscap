@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react';
 import { Heart, ShoppingCart, Star, Filter, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ClothingStore = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -184,7 +185,8 @@ const ClothingStore = () => {
                 ✨ FITSCAPE
               </h1>
               <nav className="hidden md:flex items-center gap-6">
-                <a href="#" className="text-gray-700 hover:text-purple-600 transition-colors">Home</a>
+                {/* <Link/> */}
+                <a href="/" className="text-gray-700 hover:text-purple-600 transition-colors">Home</a>
                 
               </nav>
             </div>
