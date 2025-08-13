@@ -126,9 +126,10 @@ export default function FitscapeHero() {
           FITSCAPE
         </div>
         <nav className="flex items-center space-x-12 text-lg text-gray-700">
-          <a href="#" className="hover:text-gray-900 transition-colors">New arrivals</a>
-          <a href="#" className="hover:text-gray-900 transition-colors">Customize</a>
-          <a href="#" className="hover:text-gray-900 transition-colors">Try out 3d</a>
+          <a href="tu" className="hover:text-gray-900 transition-colors">New arrivals</a>
+          <a href="ju" className="hover:text-gray-900 transition-colors">login</a>
+          <a href="pu" className="hover:text-gray-900 transition-colors">Try out 3d</a>
+         
           <div className="w-12 h-12 rounded-full bg-gray-300 flex items-center justify-center">
             <svg className="w-7 h-7 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
