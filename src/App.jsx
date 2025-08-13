@@ -6,6 +6,8 @@ import FitscapeAuth from './login'
 import AxiomWebsite from './axiom'
 import OutfitCompatibilityChecker2 from './outfit'
 import FitscapeCartPage from './cartpage'
+import FitScapeAdmin from './adminpage'
+import FitscapeOrderTracker2 from './trackorder'
 
 
 function App() {
@@ -20,7 +22,9 @@ function App() {
         <Route path='ju' element={<FitscapeAuth />}/>
       <Route path='pu' element={<AxiomWebsite />}/>
         <Route path='tu' element={<OutfitCompatibilityChecker2/>}/>
-        
+        <Route path='cart' element={<FitscapeCartPage/>}/>
+        <Route path='admin' element={<FitScapeAdmin/>}/>
+        <Route path='track' element={<FitscapeOrderTracker2/>}/>
       </Routes>
       </BrowserRouter>
     </>

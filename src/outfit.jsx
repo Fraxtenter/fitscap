@@ -256,15 +256,15 @@ const OutfitCompatibilityChecker2 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-purple-200 to-blue-100 py-8 animate-fadein">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-black text-gray-900 mb-4">
+          <h1 className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-500 to-blue-500 mb-4 drop-shadow-2xl animate-bounce-slow">
             Outfit Compatibility Checker
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Create the perfect men's outfit with our AI-powered style analyzer. 
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-fadein bg-gradient-to-r from-purple-200 via-pink-100 to-blue-100 bg-clip-text text-transparent">
+            Create the perfect women's outfit with our AI-powered style analyzer. 
             Select clothing items and get instant compatibility feedback.
           </p>
         </div>
@@ -273,11 +273,10 @@ const OutfitCompatibilityChecker2 = () => {
           {/* Left Panel - Settings */}
           <div className="xl:col-span-1">
             <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+              <h2 className="text-2xl font-bold text-purple-700 mb-6 flex items-center">
                 <Calendar className="w-6 h-6 mr-3 text-blue-600" />
                 Occasion & Season
               </h2>
-              
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
@@ -296,7 +295,6 @@ const OutfitCompatibilityChecker2 = () => {
                     <option value="wedding">Wedding</option>
                   </select>
                 </div>
-                
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-3">
                     Season
@@ -368,49 +366,49 @@ const OutfitCompatibilityChecker2 = () => {
           {/* Middle Panel - Clothing Selection */}
           <div className="xl:col-span-1">
             <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                <Shirt className="w-6 h-6 mr-3 text-blue-600" />
+              <h2 className="text-2xl font-bold text-purple-700 mb-6 flex items-center"> 
+                <Shirt className="w-6 h-6 mr-3 text-purple-700" />
                 Select Your Outfit
               </h2>
-              
-              {Object.entries(clothingItems).map(([category, items]) => (
-                <div key={category} className="mb-8">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-4 capitalize">
-                    {category === 'accessories' ? 'Accessories (optional)' : category}
-                  </h3>
-                  <div className="grid grid-cols-1 gap-3">
-                    {items.map(item => {
-                      const isSelected = category === 'accessories' ? 
-                        selectedItems.accessories.some(acc => acc.id === item.id) :
-                        selectedItems[category]?.id === item.id;
-                        
-                      return (
-                        <button
-                          key={item.id}
-                          onClick={() => handleItemSelect(category, item)}
-                          className={`p-4 rounded-xl border-2 transition-all duration-200 text-left ${
-                            isSelected 
-                              ? 'border-blue-500 bg-blue-50 shadow-md' 
-                              : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between">
-                            <div>
-                              <div className="font-semibold text-gray-900">{item.name}</div>
-                              <div className="text-sm text-gray-600 capitalize">
-                                {item.color} • {item.style} • Formality: {item.formality}/5
+              <div className="max-h-[420px] overflow-y-auto pr-2 custom-scroll">
+                {Object.entries(clothingItems).map(([category, items]) => (
+                  <div key={category} className="mb-8">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4 capitalize">
+                      {category === 'accessories' ? 'Accessories (optional)' : category}
+                    </h3>
+                    <div className="grid grid-cols-1 gap-3">
+                      {items.map(item => {
+                        const isSelected = category === 'accessories' ? 
+                          selectedItems.accessories.some(acc => acc.id === item.id) :
+                          selectedItems[category]?.id === item.id;
+                        return (
+                          <button
+                            key={item.id}
+                            onClick={() => handleItemSelect(category, item)}
+                            className={`p-4 rounded-xl border-2 transition-all duration-200 text-left ${
+                              isSelected 
+                                ? 'border-blue-500 bg-blue-50 shadow-md' 
+                                : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between">
+                              <div>
+                                <div className="font-semibold text-gray-900">{item.name}</div>
+                                <div className="text-sm text-gray-600 capitalize">
+                                  {item.color} • {item.style} • Formality: {item.formality}/5
+                                </div>
                               </div>
+                              {isSelected && (
+                                <Check className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                              )}
                             </div>
-                            {isSelected && (
-                              <Check className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                            )}
-                          </div>
-                        </button>
-                      );
-                    })}
+                          </button>
+                        );
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
 
@@ -418,7 +416,7 @@ const OutfitCompatibilityChecker2 = () => {
           <div className="xl:col-span-1">
             {/* Current Outfit */}
             <div className="bg-white rounded-3xl shadow-xl p-8 mb-8">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Current Outfit</h2>
+              <h2 className="text-2xl font-bold text-purple-700 mb-6">Current Outfit</h2>
               
               <div className="space-y-4">
                 {Object.entries(selectedItems).map(([category, item]) => (

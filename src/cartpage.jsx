@@ -6,7 +6,7 @@ const FitscapeCartPage2 = () => {
   const [cartItems, setCartItems] = useState([
     {
       id: 1,
-      name: "Purple Haze Sports Bra",
+      name: "Purple Haze Sports t shirt",
       price: 45.99,
       originalPrice: 55.99,
       image: "https://images.unsplash.com/photo-1506629905607-66bf4d18b2db?w=300&h=300&fit=crop",
